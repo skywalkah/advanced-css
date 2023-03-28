@@ -6,6 +6,10 @@
     /* Text */
     --light-text: #b5b5b5;
     --link: #628288;
+    /* Paddings */
+    --default-pad: 20px;
+    --medium-pad: 30px;
+    --large-pad: 60px;
 }
 
 /* Global styles */
@@ -33,11 +37,37 @@ h3 {
     font-size: 38px;
 }
 a {
+    position: relative;
     color: var(--link);
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 2px solid;
+    margin-top: 3px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+a:hover {
+    color: var(--white)
+}
+a:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 p {
     line-height: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: var(--default-pad);
 }
 p:last-of-type {
     margin-bottom: 0;
@@ -49,7 +79,7 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 var(--medium-pad);
 }
 .row {
     display: flex;
@@ -76,7 +106,7 @@ header .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 30px;
+    padding: var(--default-pad) var(--medium-pad);
 }
 .logo h1 {
     font-family: 'Bonheur Royale', cursive;
@@ -86,48 +116,23 @@ header .container {
 }
 nav ul li {
     display: inline;
-    padding-right: 20px;
+    padding-right: var(--default-pad);
     font-size: 20px;
 }
 nav ul li:last-child {
     padding-right: 0;
 }
 nav ul li a {
-    position: relative;
     color: var(--light-text);
-    text-decoration: none;
-    transition: 0.3s;
-}
-nav ul li a:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    height: 1em;
-    width: 100%;
-    border-bottom: 2px solid;
-    margin-top: 3px;
-    opacity: 0;
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
-    -webkit-transform: scale(0,1);
-    transform: scale(0,1);
-}
-nav ul li a:hover {
-    color: var(--white)
-}
-nav ul li a:hover:after {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
 }
 
 /* Hero */
 .hero {
     background-image: url('../images/hero.png');
     background-repeat: no-repeat;
+    background-size: cover;
     min-height: 200px;
-    padding: 20px 0;
+    padding: var(--default-pad) 0;
 }
 .hero .container {
     display: flex;
@@ -156,8 +161,8 @@ nav ul li a:hover:after {
 
 /* Main */
 main section {
-    margin-bottom: 60px;
-    padding-bottom: 60px;
+    margin-bottom: var(--large-pad);
+    padding-bottom: var(--large-pad);
     border-bottom: 2px solid var(--bgr-color);
 }
 main section:last-of-type {
@@ -169,5 +174,5 @@ main section:last-of-type {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 20px;
+    padding-top: var(--default-pad);
 }
