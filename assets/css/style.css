@@ -93,14 +93,27 @@ main {
     flex-wrap: wrap;
     width: 100%;
 }
+.row .row {
+    justify-content: space-between;
+}
 .column {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
     flex: 1;
+    margin: 10px;
 }
 .column:last-of-type {
     flex: 3;
+}
+.row .row .column {
+    flex: 1;
+    margin: 20px 10px 0;
+}
+.row .row .column:first-of-type {
+    margin-left: 0;
+}.row .row .column:last-of-type {
+    margin-right: 0;
 }
 
 /* Header */
