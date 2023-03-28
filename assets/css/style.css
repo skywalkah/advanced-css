@@ -7,6 +7,7 @@
     --light-text: #b5b5b5;
     --link: #628288;
     /* Paddings */
+    --small-pad: 10px;
     --default-pad: 20px;
     --medium-pad: 30px;
     --large-pad: 60px;
@@ -22,7 +23,7 @@ body {
     font-size: 18px;
     color: var(--light-text);
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'oswald', sans-serif;
     line-height: 1.25em;
     color: var(--white);
@@ -36,13 +37,18 @@ h2 {
 h3 {
     font-size: 38px;
 }
-a {
+h4 {
+   text-transform: uppercase;
+   margin: 0;
+   padding: 0;
+}
+.link {
     position: relative;
     color: var(--link);
     text-decoration: none;
     transition: 0.3s;
 }
-a:after {
+.link:after {
     content: '';
     position: absolute;
     left: 0;
@@ -57,10 +63,10 @@ a:after {
     -webkit-transform: scale(0,1);
     transform: scale(0,1);
 }
-a:hover {
+.link:hover {
     color: var(--white)
 }
-a:hover:after {
+.link:hover:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -122,7 +128,7 @@ nav ul li {
 nav ul li:last-child {
     padding-right: 0;
 }
-nav ul li a {
+nav ul li .link {
     color: var(--light-text);
 }
 
@@ -169,6 +175,23 @@ main section:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+main section img {
+    max-width: 100%;
+}
+main section figure {
+    position: relative;
+    border: 5px solid var(--bgr-color);
+}
+main section figure figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    padding: var(--small-pad);
+    background-color: var(--bgr-color);
+}
+main section a {
+    color: var(--link);
 }
 #contact ul {
     display: flex;
