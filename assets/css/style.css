@@ -128,20 +128,21 @@ nav ul li .link {
     text-align: right;
 }
 .hero .slogan h2 {
-    color: var(--black);
+    color: var(--white);
 }
 .hero .slogan p {
-    color: var(--bgr-color);
+    color: var(--light-text);
     margin: 5px 0 0;
 }
 .hero .avatar {
     background-image: url('../images/ls.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     width: 160px;
     height: 160px;
     border-radius: 50%;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    box-shadow: rgb(0,0,0) 0px 20px 30px -10px;
 }
 
 /* Main */
@@ -212,4 +213,41 @@ main section a {
 }
 .row .row .column:last-of-type {
     margin-right: 0;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+    header .container {
+        display: block;
+    }
+    .logo,
+    nav ul,
+    h3,
+    #contact ul {
+        text-align: center;
+    }
+    .hero .slogan h2 {
+        font-size: 26px;
+    }
+    .hero .slogan {
+        margin-left: 20px;
+    }
+    nav ul li,
+    #contact ul li {
+        line-height: 1.5em;
+    }
+    .column,
+    .row .row .column,
+    #contact ul {
+        display: block;
+        flex: auto;
+        width: 100%;
+    }
+    .row .row .column {
+        margin: var(--default-pad) 0 0;
+    }
+    main section img {
+        width: 100%;
+    }
 }
