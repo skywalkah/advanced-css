@@ -231,11 +231,11 @@ footer {
     #contact ul {
         text-align: center;
     }
-    .hero .slogan h2 {
-        font-size: 26px;
-    }
     .hero .slogan {
         margin-left: 20px;
+    }
+    .hero .slogan h2 {
+        font-size: 26px;
     }
     nav ul li,
     #contact ul li {
