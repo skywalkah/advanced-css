@@ -183,6 +183,10 @@ main section a {
     margin: 0 auto;
     padding: 0 var(--medium-pad);
 }
+.image-holder {
+    max-height: 130px;
+    overflow: hidden; 
+}
 .row {
     display: flex;
     flex-direction: row;
